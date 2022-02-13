@@ -27,7 +27,16 @@ class List extends Component {
     if (loading) {
       return <div>Loading...</div>;
     }
-    return data.map((movie) => <Card key={movie.id} movie={movie} />);
+    return (
+      <div className="row">
+        {data.map((movie) => (
+          // eslint-disable-next-line react/jsx-key
+          <div className="col-sm-2">
+            <Card key={movie.id} movie={movie} />
+          </div>
+        ))}
+      </div>
+    );
   }
 }
 
